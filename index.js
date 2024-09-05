@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/new', (req, res) => {
-    res.send('hello world')
+    res.render("form", { title: "Mini Messageboard", messages: messages })
 })
 
 app.post('/new', (req, res) => {
