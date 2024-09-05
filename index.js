@@ -19,12 +19,13 @@ const messages = [
     }
 ];
 
-app.get('/', (req, res) => {
-    res.render("index", { title: "Mini Messageboard", messages: messages })
-})
 
 app.get('/new', (req, res) => {
     res.render("form", { title: "Mini Messageboard", messages: messages })
+})
+
+app.get('/messages/:index', (req, res) => {
+    res.render("message", { title: "Message Details", message: messages[Number(req.params.index)] })
 })
 
 app.post('/new', (req, res) => {
@@ -32,6 +33,9 @@ app.post('/new', (req, res) => {
     res.redirect("/")
 })
 
+app.get('/', (req, res) => {
+    res.render("index", { title: "Mini Messageboard", messages: messages })
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

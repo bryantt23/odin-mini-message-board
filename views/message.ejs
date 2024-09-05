@@ -2,14 +2,9 @@
   <body>
     <h1><%= title %></h1>
     <a href="/new">Add message</a>
-    <ul>
-      <% messages.map((message, index)=>{ %>
-      <li>
+    <a href="/">Show messages</a>
         <p><b><%= message.text %></b> by <%= message.user %></li>
 </p>
         <p>Added on <%= message.added.toLocaleString() %></p>
-        <p><a href="messages/<%= index %>">See details</a></p>
-      <% }) %>
-    </ul>
   </body>
 </html>
