@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <% messages.map(message=>{ %>
+      <li>
+        <p><b><%= message.text %></b> by <%= message.user %></li>
+</p>
+        <p>Added on <%= message.added.toLocaleString() %></p>
+      <% }) %>
+    </ul>
+  </body>
+</html>
